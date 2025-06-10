@@ -1,0 +1,34 @@
+step1: install jenkins on windows
+ click on windows
+download jenkins
+
+step 2 : java 17 download
+click on windows x64 installer
+step 3:Open command prompt of your windows machine and verify the java installation.
+give command
+java --version
+and after above command
+
+step 4: Use “java -jar <path-to-jenkins.war-file >” command to install Jenkins.
+
+example : java -jar "C:\Users\91779\Downloads\jenkins.war"
+
+step5: administrative password will generate in command prompt
+
+step6: go to  chrome and type :
+
+localhost:8080
+
+paste the password there
+
+install suggested plugins
+
+getting started will happen
+
+skip and continue as admin
+
+save and finish
+
+Start using jenkins
+
+thats it
