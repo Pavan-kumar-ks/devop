@@ -1,0 +1,55 @@
+LAB-3
+
+plugins {
+    id 'java'
+    id 'application'  // Add this line
+}
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+test {
+    useJUnitPlatform()
+}
+application {
+    mainClass = 'org.example.Main'  // Specify the main class
+}
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.Main' // Specify the main class here as well
+        )
+    }
+}
+
+
+
+
+commands
+
+Build the Project
+gradle build
+
+./gradlew clean
+./gradlew run
+
+
+
+
+2. Run the Application
+gradle run
+
+
+
+3. Create an Executable JAR
+gradle jar
+
+
+
+4. Run the JAR File
+java -jar build/libs/project-name-1.0-SNAPSHOT.jar
