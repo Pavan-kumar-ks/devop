@@ -1,0 +1,66 @@
+step1: go to intelij
+In intellij, open new project.
+
+Provide the project name and 
+select  maven
+
+You will be getting a default pom.xm l and main.java file
+
+After that create a git repo with the same name as of your project name
+
+Create the repo click on the Create repository
+
+ After creating the git repository, you need to give some commands in intelij
+
+
+git init
+ git add .
+git commit -m "first commit"
+ git branch -M main 
+git config --global user.name "NishaHG" 
+git config --global user.email "nishahg56@gmail.com"
+ssh-keygen -t rsa -b 4096 -C "nishahg56@gmail.com"
+----give so many enters(3 times)
+
+ cat ~/.ssh/id_rsa.pub
+
+next step :
+     go to github again and go to git hub settings then click on 
+	ssh and gpg 
+	and  give any name in title
+     and paste the rsa key at key 
+
+git remote set-url origin https://github.com/NishaHG/lab10.git
+           if error:  error: No such remote 'origin'
+git remote add origin git@github.com:NishaHG/lab10.git(optional if error occurs)
+           then give 
+git remote set-url origin https://github.com/NishaHG/lab10.git
+ git remote -v
+git push --set-upstream origin main 
+git push
+
+next step  :
+open azure devops 
+
+search orgnization 
+
+select already excisted project tehn
+
+select pipelines
+
+create piplines
+
+choose github yaml 
+
+authorize
+
+choose neccesary git repo which we have created at begging
+
+aprove and install
+
+choose azure account
+
+build system as maven
+
+save and run
+
