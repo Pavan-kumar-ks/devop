@@ -1,0 +1,101 @@
+LAB-4
+
+
+step1:  open the maven project file which u have created in experiment2 in search bar
+
+step2 : right click and  open terminal
+
+step3  give command : gradle init
+
+then give yes
+then select 2   (that is groovy)[
+then give no
+
+step4:  go to intellij then open maven project folder
+
+there build.gradle file will be added
+
+there clear the build.gradle file code and paste the below code
+
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'application'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+description = 'lab1'
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
+
+
+application {
+    mainClass = 'org.example.Main'  // Specify the main class
+}
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.Main' // Specify the main class here as well
+        )
+    }
+}
+
+
+
+
+
+
+commands in intellij terminal
+
+
+./gradlew build
+
+
+
+
+cd build
+
+
+cd libs
+
+
+ls
+
+
+
+(copy jar file path)
+
+(like this    target\lab1-1.0-SNAPSHOT.jar )
+
+
+
+
+java -jar  target\lab1-1.0-SNAPSHOT.jar
